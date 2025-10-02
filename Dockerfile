@@ -2,8 +2,8 @@
 FROM maven:3.9-eclipse-temurin-21 AS build
 
 # Arg modul (folder) & nama artefak
-ARG MODULE_DIR=order-service
-ARG JAR_NAME=order-service
+ARG MODULE_DIR=notification-service
+ARG JAR_NAME=notification-service
 
 # Workdir root repo
 WORKDIR /workspace
@@ -37,8 +37,8 @@ USER spring:spring
 WORKDIR /app
 
 # Salin jar hasil build
-ARG MODULE_DIR=user-service
-ARG JAR_NAME=user-service
+ARG MODULE_DIR=notification-service
+ARG JAR_NAME=notification-service
 COPY --from=build /workspace/${MODULE_DIR}/target/${JAR_NAME}*.jar /app/app.jar
 
 # Port service (opsional, untuk dokumentasi)

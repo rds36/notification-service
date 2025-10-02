@@ -1,10 +1,7 @@
 server:
   port: 8084
 
-
 spring:
-  application:
-    name: notification-service
   kafka:
     bootstrap-servers: ${KAFKA_BOOTSTRAP_SERVERS:localhost:9092}
     consumer:
@@ -19,6 +16,9 @@ spring:
     listener:
       ack-mode: MANUAL
       concurrency: 1
+  jackson:
+    serialization:
+      WRITE_DATES_AS_TIMESTAMPS: false
 
 notification:
   topic: order.created

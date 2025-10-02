@@ -1,1 +1,8 @@
-spring.application.name=notification-service
+server:
+  port: 8084
+
+spring:
+  application:
+    name: notification-service
+  profiles:
+    active: dev
